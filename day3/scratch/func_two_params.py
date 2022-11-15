@@ -10,3 +10,5 @@ def display_output(msg1, msg2):
 
 display_output("Message1", "Message2")
 display_output("Hello", "Something")
+# this doesn't have to be in order you can change it to named arguments
+display_output(msg2="Hello", msg1="Something")
