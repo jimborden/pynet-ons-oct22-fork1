@@ -1,6 +1,7 @@
 from getpass import getpass
 import requests
 import rich
+from aruba_auth import logout
 
 username = input("Enter username: ")
 PASSWORD = getpass("Enter Aruba Controller password: ")
@@ -33,3 +34,6 @@ if response.status_code == 200:
 
     response = session.get(full_url, verify=SSL_VERIFY)
     rich.print(response.json())
+
+    response = logout(session, host, uid_aruba=uid_aruba)
+    print(response)
