@@ -2,12 +2,11 @@ from getpass import getpass
 import requests
 import rich
 
-
 username = input("Enter username: ")
 PASSWORD = getpass("Enter Aruba Controller password: ")
 SSL_VERIFY = False
 
-host = "aruba.lasthop.io"
+host = "10.5.235.12"
 api_port = "4343"
 login_url = f"https://{host}:{api_port}/v1/api/login"
 
