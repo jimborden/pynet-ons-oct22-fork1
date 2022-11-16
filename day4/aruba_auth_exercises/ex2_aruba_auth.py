@@ -1,8 +1,9 @@
 import aruba_auth
 import requests
 
-host = "aruba.lasthop.io"
+host = "10.5.235.12"
 api_port = "4343"
+SSL_VERIFY = False
 
 session = requests.Session()
 session.headers["Accept"] = "application/json"

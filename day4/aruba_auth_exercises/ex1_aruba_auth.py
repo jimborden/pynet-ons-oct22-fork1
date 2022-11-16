@@ -3,6 +3,7 @@ import requests
 import rich
 
 SSL_VERIFY = False
+host = "10.5.235.5"
 
 
 def auth(session, host, api_port=4343):
@@ -33,7 +34,7 @@ def auth(session, host, api_port=4343):
 
 
 if __name__ == "__main__":
-    host = "aruba.lasthop.io"
+    host = "10.5.235.12"
     api_port = "4343"
 
     session = requests.Session()

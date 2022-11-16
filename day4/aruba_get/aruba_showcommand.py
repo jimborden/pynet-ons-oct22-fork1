@@ -2,7 +2,7 @@ import requests
 import rich
 from aruba_auth import auth
 
-host = "aruba.lasthop.io"
+host = "10.5.235.16"
 api_port = "4343"
 
 session = requests.Session()

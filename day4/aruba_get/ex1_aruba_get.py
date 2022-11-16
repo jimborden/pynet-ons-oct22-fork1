@@ -2,7 +2,7 @@ import requests
 import rich
 from aruba_auth import auth, logout
 
-host = "aruba.lasthop.io"
+host = "10.5.235.12"
 api_port = "4343"
 
 session = requests.Session()
@@ -14,9 +14,10 @@ uid_aruba_qs = f"UIDARUBA={uid_aruba}"
 # Test a GET operation
 base_url = f"https://{host}:{api_port}/v1/configuration/"
 relative_url = "object/hostname"
+heirarchy_url = "?config_path=/md/40Lab/VH/20:4c:03:39:5a:fc"
 
 # Adding the UID_ARUBA query string for compatibility with 8.6.X.X
-full_url = f"{base_url}{relative_url}?{uid_aruba_qs}"
+full_url = f"{base_url}{relative_url}{heirarchy_url}?{uid_aruba_qs}"
 
 response = session.get(full_url, verify=False)
 rich.print(response.json())
