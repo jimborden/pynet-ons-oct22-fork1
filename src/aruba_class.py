@@ -93,7 +93,9 @@ class ArubaAPI:
 
         full_url = f"{base_url}{relative_url}{query_string}"
         if config_payload:
-            return self.session.post(full_url, data=json.dumps(config_payload), verify=False)
+            return self.session.post(
+                full_url, data=json.dumps(config_payload), verify=False
+            )
         else:
             # Allow POSTs like "write memory" that have no payload
             return self.session.post(full_url, verify=False)

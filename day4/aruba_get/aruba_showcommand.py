@@ -16,8 +16,8 @@ base_url = f"https://{host}:{api_port}/v1/configuration/"
 
 # Adding the UID_ARUBA query string for compatibility with 8.6.X.X
 command = "show+ap+database-summary"
-relative_url = f"showcommand?command={command}&{uid_aruba_qs}"
-full_url = f"{base_url}{relative_url}"
+relative_url = "/object/hostname"
+full_url = f"{base_url}{relative_url}?{uid_aruba_qs}"
 
 response = session.get(full_url, verify=False)
 rich.print(response.json())
